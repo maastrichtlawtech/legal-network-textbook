@@ -1,5 +1,5 @@
 <template>
-    <div id="pdf-container">
+    <div id="pdf-container" class="mx-auto container">
         <div v-for="nb in notebooks">
             <div v-html="nb"></div>
         </div>
@@ -7,6 +7,7 @@
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+import "https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js";
 
 declare let ipynb2html: any;
 const notebooks = ref<string[]>([]);
@@ -29,5 +30,7 @@ onMounted(async () => {
 })
 </script>
 <style scoped>
-
+@import url('https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/notebook.min.css');
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css');
+@import url('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.3/build/styles/default.min.css');
 </style>
