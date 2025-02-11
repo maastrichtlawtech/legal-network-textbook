@@ -7,9 +7,10 @@
     --border-normal: 1px solid gray;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
+*, html {
+
+    scroll-behavior: smooth !important;
+}
 
 /* TABLE */
 
@@ -149,6 +150,7 @@ aside {
     overflow: scroll;
     min-width: 300px;
     border: 1px solid black;
+    background-color: #f5f0f0;
 }
 
 aside * ul {
@@ -174,6 +176,10 @@ aside * li {
     margin-bottom: 20px;
     padding: 10px;
     cursor: pointer;
+}
+
+h1 {
+    font-size: 2em;
 }
 
 code {
