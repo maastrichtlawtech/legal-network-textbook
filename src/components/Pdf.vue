@@ -80,7 +80,7 @@ const addToToc = (node: HTMLElement) => {
 
 function getUrl(node: HTMLElement) {
     let url = node.innerText.toLowerCase();
-    url = url.replaceAll(/[^a-zA-Z0-9\s-:]/g, '');
+    url = url.replaceAll(/[^a-zA-Z0-9\s-]/g, '');
     url = url.replaceAll(' ', '-');
     return url;
 }
