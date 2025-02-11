@@ -20,8 +20,11 @@
                 </ul>
             </section>
         </aside>
-        <!-- NOTEBOOKS CONTENT -->
         <section id="notebooks-container">
+            <!-- PRESENTATION PAGE -->
+            <Presentation v-if="presentation" :title="presentation.title" :version="presentation.version"
+                :authors="presentation.authors" :place="presentation.place" :date="presentation.date" />
+            <!-- NOTEBOOKS CONTENT -->
             <div v-for="nb in notebooks">
                 <div v-html="nb"></div>
             </div>
@@ -30,26 +33,29 @@
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import { jsPDF } from "jspdf";
+import Presentation from "./Presentation.vue";
+// import { jsPDF } from "jspdf";
 import "https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js";
 
 // declare let html2pdf: any;
 declare let ipynb2html: any;
 
-const notebooks = ref<string[]>([]);
 const config = ref();
-const tocItems = ref<{label: string, url: string}[][]>([]);
+const notebooks = ref<string[]>([]);
+const presentation = ref<{
+    title: String,
+    version: Number,
+    authors: Array<String>,
+    place: String,
+    date: String
+}>();
 
-// const doc = ref(new jsPDF({
-//     compress: true,
-//     orientation: 'p',
-//     unit: 'px',
-//     format: 'a4'
-// }));
+const tocItems = ref<{ label: string, url: string }[][]>([]);
 
 const loadNotebooks = async () => {
     const configFile = await fetch('/nbconfig.json');
     config.value = await configFile.json();
+    presentation.value = config.value.presentation;
     const notebooksNames = config.value.notebooks;
     for (let i = 0; i < notebooksNames.length; ++i) {
         const nb: string = notebooksNames[i];
@@ -64,9 +70,9 @@ const loadNotebooks = async () => {
 const addToToc = (node: HTMLElement) => {
 
     if (node.tagName == 'H1') {
-        tocItems.value.push([{ label: node.innerText, url: getUrl(node)}]);
+        tocItems.value.push([{ label: node.innerText, url: getUrl(node) }]);
     } else if (node.tagName == 'H2') {
-        tocItems.value.at(-1).push({ label: node.innerText, url: getUrl(node)});
+        tocItems.value.at(-1).push({ label: node.innerText, url: getUrl(node) });
     }
 
     //TODO: upgrade for h3
@@ -88,36 +94,7 @@ function getUrl(node: HTMLElement) {
 const openPrintPreview = () => {
     window.print();
 
-    // const notebooksHTML = document.getElementById('notebooks-container');
-
-    // doc.value.html(notebooksHTML!, {
-    //     callback: (doc) => {
-    //         doc.save("textbook.pdf");
-    //     },
-    //     html2canvas: { scale: .5 }
-    // });
 }
-
-// const generatePDF = async () => {
-
-//     const notebooksHTML = document.getElementById('notebooks-container');
-
-//     // const options = {
-//     //     filename: 'textbook.pdf',
-//     //     image: { type: 'jpeg', quality: 0.7 },
-//     //     // html2canvas: { scale: 1 },
-//     //     jsPDF: { unit: 'px', format: 'a4', orientation: 'portrait', compress: true },
-//     //     pagebreak: { mode: 'avoid-all' }
-//     // };
-
-//     // await html2pdf().from(notebooksHTML).set(options).save();
-
-//     doc.value.html(notebooks.value[0], {
-//         callback: (doc) => {
-//             doc.save("textbook.pdf");
-//         }
-//     });
-// };
 
 onMounted(async () => {
     await loadNotebooks();

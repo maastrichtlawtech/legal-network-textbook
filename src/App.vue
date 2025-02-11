@@ -1,8 +1,8 @@
 <template>
-  <Pdf/>
+  <MainPage/>
 </template>
 <script setup lang="ts">
-import Pdf from './components/Pdf.vue'
+import MainPage from './components/MainPage.vue'
 </script>
 <style scoped>
 </style>

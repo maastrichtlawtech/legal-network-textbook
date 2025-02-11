@@ -1,16 +1,23 @@
 {
-    "notebooks": [
-        "Chapter_1_Introduction",
-        "Chapter_2_Key_Concepts",
-        "Chapter_3_Centrality",
-        "Chapter_4_Communities",
-        "Chapter_5_Data_Collection_and_Preparation",
-        "Chapter_6_Software",
-        "Chapter_7_Plotting",
-        "Appendix_1_Getting_data_in",
-        "Appendix_2_Text_Similarity_Net",
-        "Appendix_3_Normalization",
-        "Appendix_4_Vector_Scaling",
-        "Appendix_5_Plotting"
-    ]
+  "presentation": {
+    "title": "Legal Network Analysis",
+    "version": 0.1,
+    "authors": ["Gustavo Arosemena", "Gijs van Dijck", "Roland Moerland"],
+    "place": "Maastricht",
+    "date": "November 1, 2023"
+  },
+  "notebooks": [
+    "Chapter_1_Introduction",
+    "Chapter_2_Key_Concepts",
+    "Chapter_3_Centrality",
+    "Chapter_4_Communities",
+    "Chapter_5_Data_Collection_and_Preparation",
+    "Chapter_6_Software",
+    "Chapter_7_Plotting",
+    "Appendix_1_Getting_data_in",
+    "Appendix_2_Text_Similarity_Net",
+    "Appendix_3_Normalization",
+    "Appendix_4_Vector_Scaling",
+    "Appendix_5_Plotting"
+  ]
 }
