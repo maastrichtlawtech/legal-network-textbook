@@ -7,6 +7,10 @@
     --border-normal: 1px solid gray;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 /* TABLE */
 
 table > caption {
@@ -141,8 +145,18 @@ main {
 }
 
 aside {
+    height: 100%;
+    overflow: scroll;
     min-width: 300px;
     border: 1px solid black;
+}
+
+aside * ul {
+    padding: 5px 30px
+}
+
+aside * li {
+    padding-top: 5px
 }
 
 #notebooks-container {

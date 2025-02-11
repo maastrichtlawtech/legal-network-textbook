@@ -3,5 +3,11 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "target": "es2022",  // Or use "esnext"
+    "lib": ["es2022", "dom"],
+    "moduleResolution": "node",
+    "module": "esnext"
+  }
 }
