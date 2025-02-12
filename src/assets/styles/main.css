@@ -1,3 +1,5 @@
+@import url('./media-screen.css');
+
 
 :root {
     --border-strong: 3px solid #777;
@@ -5,7 +7,6 @@
 }
 
 *, html {
-
     scroll-behavior: smooth !important;
 }
 
@@ -20,10 +21,11 @@ table > caption {
 /* 210 x 297 mm */
 
 table {
-    /* width: 297mm;
-    height: 210mm; */
-    border-collapse: collapse;
+    display: inline-block;
     max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-collapse: collapse;
 }
 
 td {
@@ -54,8 +56,6 @@ tbody tr > :last-child {
 /* top header */
 
 .top_head > th {
-    /* width: 54mm;
-    height: 10mm; */
     vertical-align: bottom;
     border-top: var(--border-strong);
     border-bottom: var(--border-strong);
@@ -63,7 +63,6 @@ tbody tr > :last-child {
 }
 
 .top_head :first-child {
-    /* width: 27mm; */
     border: var(--border-strong);
 }
 
@@ -208,8 +207,8 @@ code {
     white-space: pre-wrap;
 }
 
-table {
-    max-width: 100%;
+p {
+    overflow-x: auto;
 }
 
 #notebooks-container * img {
