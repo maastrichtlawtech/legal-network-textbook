@@ -1,29 +1,12 @@
 <template>
     <main>
-        <aside>
-            <button class="print-btn" @click="openPrintPreview" type="button">Print or Download as PDF</button>
-            <!-- TABLE OF CONTENTS -->
-            <section id="toc" v-if="tocItems">
-                <ul>
-                    <template v-for="chapter in tocItems">
-                        <li>
-                            <a :href="`#${chapter[0].url}`">{{ chapter[0].label }}</a>
-                            <ul>
-                                <template v-for="(subchpater, index) in chapter">
-                                    <li v-if="index > 0">
-                                        <a :href="`#${subchpater.url}`">{{ subchpater.label }}</a>
-                                    </li>
-                                </template>
-                            </ul>
-                        </li>
-                    </template>
-                </ul>
-            </section>
-        </aside>
+        <!-- LEFT COLUMN (INDEX AND CONTROLS) -->
+        <TableOfContents :tocItems="tocItems" />
         <section id="notebooks-container">
             <!-- PRESENTATION PAGE -->
-            <Presentation v-if="presentation" :title="presentation.title" :version="presentation.version"
-                :authors="presentation.authors" :place="presentation.place" :date="presentation.date" />
+            <Presentation v-if="presentation" :university="presentation.university" :department="presentation.department"
+                :title="presentation.title" :version="presentation.version" :authors="presentation.authors"
+                :place="presentation.place" :date="presentation.date" />
             <!-- NOTEBOOKS CONTENT -->
             <div v-for="nb in notebooks">
                 <div v-html="nb"></div>
@@ -34,15 +17,16 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import Presentation from "./Presentation.vue";
-// import { jsPDF } from "jspdf";
+import TableOfContents from "./TableOfContents.vue";
 import "https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/ipynb2html-full.min.js";
 
-// declare let html2pdf: any;
 declare let ipynb2html: any;
 
 const config = ref();
 const notebooks = ref<string[]>([]);
 const presentation = ref<{
+    university: String,
+    department: String,
     title: String,
     version: Number,
     authors: Array<String>,
@@ -91,10 +75,6 @@ function getUrl(node: HTMLElement) {
     return url;
 }
 
-const openPrintPreview = () => {
-    window.print();
-
-}
 
 onMounted(async () => {
     await loadNotebooks();
