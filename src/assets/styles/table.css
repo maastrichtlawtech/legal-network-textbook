@@ -1,0 +1,97 @@
+
+table > caption {
+    font-size: 6mm;
+    font-weight: bolder;
+    letter-spacing: 1mm;
+}
+
+table {
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 1mm;
+    position: relative;
+    font-size: 3mm;
+    text-align: center;
+    font-weight: normal;
+}
+
+th {
+    text-align: center !important;
+}
+
+thead {
+    font-size: 3mm;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+
+/* top header */
+
+.top_head > th {
+    vertical-align: middle;
+}
+
+/* left header */
+
+tbody th {
+    font-size: 3mm;
+}
+
+/* row */
+
+tbody td > div {
+    height: 30mm;
+    overflow: hidden;
+}
+
+.vertical_span_all {
+    font-size: 5mm;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.vertical_span_all div {
+    height: 10mm;
+}
+
+/* td contents */
+
+.left {
+    width: 95%;
+    position: absolute;
+    top: 1mm;
+    left: 1mm;
+}
+
+.left > div {
+    width: 100%;
+    margin-bottom: 3mm;
+}
+
+.right {
+    position: absolute;
+    left: 1mm;
+    bottom: 1mm;
+}
+
+.teacher {
+    position: absolute;
+    right: 1mm;
+    bottom: 1mm;
+}
+
+.note {
+    font-size: 3mm;
+}
+
+.note :last-child {
+    float: right;
+}
