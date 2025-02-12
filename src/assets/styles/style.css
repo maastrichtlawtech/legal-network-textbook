@@ -172,10 +172,35 @@ aside * li {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
     padding: 10px;
     cursor: pointer;
+    background-color: rgb(52, 121, 248);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 400;
+    opacity: .8;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+.print-btn:hover {
+    opacity: 1;
+}
+
+a {
+    color: rgb(3, 74, 207);
+    transition: color .25s ease-out;
+    -moz-transition: color .25s ease-out;
+    -webkit-transition: color .25s ease-out;
+    -o-transition: color .25s ease-out;
+}
+
+a:hover {
+    color: rgb(104, 154, 246);
 }
 
 h1 {
@@ -190,7 +215,7 @@ table {
     max-width: 100%;
 }
 
-img {
+#notebooks-container * img {
     display: block;
     margin-left: auto;
     margin-right: auto;
