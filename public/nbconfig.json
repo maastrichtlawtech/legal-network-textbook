@@ -1,5 +1,7 @@
 {
   "presentation": {
+    "university": "Maastricht University",
+    "department": "Law and Tech Lab",
     "title": "Legal Network Analysis",
     "version": 0.1,
     "authors": ["Gustavo Arosemena", "Gijs van Dijck", "Roland Moerland"],

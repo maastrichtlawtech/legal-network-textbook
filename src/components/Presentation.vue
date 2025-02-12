@@ -1,7 +1,11 @@
 <template>
     <section id="presentation">
-        <h3 id="university">MAASTRICHT UNIVERSITY</h3>
-        <h3 id="lawtechlab">LAW AND TECH LAB</h3>
+        <div id="university">
+            <h3>{{ university }}</h3>
+        </div>
+        <div id="department">
+            <h3>{{ department }}</h3>
+        </div>
         <div id="title">
             <h1>{{ title }}</h1>
         </div>
@@ -25,7 +29,9 @@
 </template>
 <script setup lang="ts">
 
-const props = defineProps({
+defineProps({
+    university: String,
+    department: String,
     title: String,
     version: Number,
     authors: Array<String>,
@@ -45,6 +51,11 @@ const props = defineProps({
 
 #presentation > #university {
     margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+#presentation > #department {
+    text-transform: uppercase;
 }
 
 #presentation > #title {
