@@ -2,7 +2,7 @@
     <aside>
         <div id="buttons">
             <button id="github">
-                <a type="button" href="/github.com" target="_blank">
+                <a type="button" href="https://github.com/maastrichtlawtech/legal-network-textbook" target="_blank">
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="3840.000000pt" height="2160.000000pt"
                         viewBox="0 0 3840.000000 2160.000000" preserveAspectRatio="xMidYMid meet">
 
