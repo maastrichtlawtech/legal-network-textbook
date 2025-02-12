@@ -26,7 +26,7 @@ th {
 }
 
 thead {
-    font-size: 3mm;
+    font-size: 2.5mm;
 }
 
 tbody tr:nth-child(odd) {
@@ -42,7 +42,7 @@ tbody tr:nth-child(odd) {
 /* left header */
 
 tbody th {
-    font-size: 3mm;
+    font-size: 2.5mm;
 }
 
 /* row */
@@ -53,7 +53,7 @@ tbody td > div {
 }
 
 .vertical_span_all {
-    font-size: 5mm;
+    font-size: 3mm;
     font-weight: bolder;
     text-align: center;
 }

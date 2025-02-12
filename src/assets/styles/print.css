@@ -1,0 +1,44 @@
+
+@media only print {
+    body {
+        visibility: hidden;
+    }
+    #notebooks-container {
+        visibility: visible;
+        position: absolute;
+        width: 100% !important;
+        overflow: visible !important;
+        left: 0;
+        top: 0;
+        padding: 0 !important;
+    }
+
+    table {
+        display: inline-block !important;
+        overflow-x: visible !important;
+    }
+
+    @page {
+        /* size: auto;
+        margin-top: 4mm; */
+        /* margin-bottom: 4mm; */
+    }
+
+    /* 
+    html
+    {
+        background-color: #FFFFFF; 
+        margin: 0px;  
+    }
+
+    body
+    {
+        border: solid 1px blue ;
+        margin: 10mm 15mm 10mm 15mm; 
+    } */
+
+    /* .nb-code-cell {
+        page-break-after: always;
+        page-break-inside: avoid;
+      } */
+}

@@ -41,7 +41,6 @@ defineProps({
 
 </script>
 <style scoped>
-
 #presentation {
     text-align: center;
     padding: 50px;

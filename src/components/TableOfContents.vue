@@ -79,7 +79,7 @@
                     </svg>
                 </a>
             </button>
-            <button class="print-btn" @click="openPrintPreview" type="button">Print or Download as PDF</button>
+            <button id="print-btn" @click="openPrintPreview" type="button">Print or Download as PDF</button>
         </div>
         <!-- TABLE OF CONTENTS -->
         <section id="toc" v-if="tocItems">
@@ -111,6 +111,22 @@ const openPrintPreview = () => {
 }
 </script>
 <style scoped>
+aside {
+    height: 100%;
+    overflow: scroll;
+    min-width: 300px;
+    border: 1px solid black;
+    background-color: #f5f0f0;
+}
+
+aside * ul {
+    padding: 5px 30px
+}
+
+aside * li {
+    padding-top: 5px
+}
+
 aside>#buttons {
     text-align: center;
     margin-top: 10px
@@ -142,5 +158,28 @@ aside>#buttons>#github {
     -webkit-transition: color .5s ease-out !important;
     -o-transition: color .5s ease-out !important;
     padding: 0;
+}
+
+#print-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(52, 121, 248);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 400;
+    opacity: .8;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+#print-btn:hover {
+    opacity: 1;
 }
 </style>

@@ -80,3 +80,34 @@ onMounted(async () => {
     await loadNotebooks();
 })
 </script>
+<style>
+#notebooks-container {
+    position: relative;
+    overflow: auto;
+    padding: 0 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#notebooks-container * code {
+    white-space: pre-wrap;
+}
+
+#notebooks-container * p {
+    overflow-x: auto;
+}
+
+#notebooks-container * img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+#notebooks-container * .nb-input::before {
+    display: contents !important;
+}
+
+#notebooks-container * .nb-output::before {
+    display: contents !important;
+}
+</style>
