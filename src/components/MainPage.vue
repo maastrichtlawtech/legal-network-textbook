@@ -37,13 +37,13 @@ const presentation = ref<{
 const tocItems = ref<{ label: string, url: string }[][]>([]);
 
 const loadNotebooks = async () => {
-    const configFile = await fetch('/nbconfig.json');
+    const configFile = await fetch(`${import.meta.env.BASE_URL}/nbconfig.json`);
     config.value = await configFile.json();
     presentation.value = config.value.presentation;
     const notebooksNames = config.value.notebooks;
     for (let i = 0; i < notebooksNames.length; ++i) {
         const nb: string = notebooksNames[i];
-        const file = await fetch(`/notebooks/${nb}.ipynb`);
+        const file = await fetch(`${import.meta.env.BASE_URL}/notebooks/${nb}.ipynb`);
         var json = await file.json();
         var rendered = ipynb2html.render(json);
         addToToc(rendered);
