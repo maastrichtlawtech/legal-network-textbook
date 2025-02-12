@@ -64,6 +64,7 @@ defineProps({
 }
 
 #presentation > #authors {
-    margin: 120px 0;
+    margin-top: 80px;
+    margin-bottom: 60px;
 }
 </style>

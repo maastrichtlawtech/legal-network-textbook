@@ -18,6 +18,15 @@
         overflow-x: visible !important;
     }
 
+    #presentation > #title {
+        margin: 500px 0;
+    }
+
+    #presentation > #authors {
+        margin-top: 220px !important;
+        margin-bottom: 260px !important;
+    }
+
     @page {
         /* size: auto;
         margin-top: 4mm; */
@@ -41,4 +50,13 @@
         page-break-after: always;
         page-break-inside: avoid;
       } */
+
+      #presentation {
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+
+      h1, h2 {
+        page-break-after: avoid;
+      }
 }
