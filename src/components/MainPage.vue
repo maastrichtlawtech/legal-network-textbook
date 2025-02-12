@@ -81,6 +81,10 @@ onMounted(async () => {
 })
 </script>
 <style>
+@import url('https://cdn.jsdelivr.net/npm/ipynb2html@0.4.0-rc.1/dist/notebook.min.css');
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css');
+@import url('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.3/build/styles/default.min.css');
+
 #notebooks-container {
     position: relative;
     overflow: auto;
