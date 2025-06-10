@@ -58,3 +58,31 @@ def score_normalize(input, from_dictionary=True):
 #     means = comparision_df.corr().mean()
 #     sns.barplot(x = means.values, y= means.index, ax = ax[1])
 
+
+## Save for later
+
+# level0_nodes = [x for x in g_drones if x != "2021R0664" or "2019R0945"]
+# level1_nodes = ["2021R0664", "2019R0945"]
+# edges_for_2001R0664 = [(x,y) for x, y in g_drones.edges() if x == "2021R0664"]
+# edges_for_2019R0945 = [(x,y) for x, y in g_drones.edges() if x == "2019R0945"]
+#
+# g_drones_bipartite = nx.Graph()
+# g_drones_bipartite.add_nodes_from(level0_nodes, bipartite=0)
+# g_drones_bipartite.add_nodes_from(level1_nodes, bipartite=1)
+#
+# g_drones_bipartite.add_edges_from(edges_for_2001R0664)
+# g_drones_bipartite.add_edges_from(edges_for_2019R0945)
+#
+# nodeset1 = [y for x,y in edges_for_2019R0945]+["2019R0945"]
+# nodeset2 = [y for x,y in edges_for_2001R0664]+["2021R0664"]
+#
+# print(nodeset2)
+#
+# plt.figure(figsize=(6, 6))
+# pos = nx.bipartite_layout(g_drones_bipartite, nodes=level1_nodes)
+#
+# nx.draw_networkx_nodes(g_drones_bipartite, nodelist=nodeset1, node_color="tab:blue", pos = pos, alpha=0.5)
+# nx.draw_networkx_edges(g_drones_bipartite, edgelist= edges_for_2019R0945, pos = pos, alpha=0.5)
+# nx.draw_networkx_nodes(g_drones_bipartite, nodelist=nodeset2, node_color="tab:orange", pos = pos, alpha=0.5)
+# nx.draw_networkx_edges(g_drones_bipartite, edgelist=edges_for_2001R0664, pos = pos, alpha=0.5)
+# nx.draw_networkx_labels(g_drones_bipartite, pos=pos, labels={"2019R0945":"2019R0945", "2021R0664":"2021R0664"}, font_size=10);
